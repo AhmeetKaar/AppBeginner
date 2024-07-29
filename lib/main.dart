@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp()); // ali dayı
+  runApp(const MyApp()); 
 }
 
 class MyApp extends StatelessWidget {
@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'To Do List', // ali dayının evinin adı
+      title: 'To Do List', 
       theme: ThemeData.dark(),
-      home: const MyHomePage(title: 'To Do List',), // ali dayının cocugu myhomepage
+      home: const MyHomePage(title: 'To Do List',), 
     );
   }
 }
@@ -38,9 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(  // Scaffold evin tasarımcısı 
-      appBar: AppBar(  // ekranın yukarısında bulunan farklı tema 
-        title: Text(widget.title),       // temanın ortasına yazdığım miras gelen title
+    return Scaffold( 
+      appBar: AppBar(   
+        title: Text(widget.title),   
       ),
       body: Center(
         child: Column(
