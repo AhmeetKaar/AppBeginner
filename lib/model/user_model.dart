@@ -1,4 +1,4 @@
-class UserModel {
+/*class UserModel {
   String? login;
   int? id;
   String? nodeId;
@@ -79,34 +79,5 @@ class UserModel {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['login'] = login;
-    data['id'] = id;
-    data['node_id'] = nodeId;
-    data['avatar_url'] = avatarUrl;
-    data['gravatar_id'] = gravatarId;
-    data['url'] = url;
-    data['html_url'] = htmlUrl;
-    data['followers_url'] = followersUrl;
-    data['following_url'] = followingUrl;
-    data['gists_url'] = gistsUrl;
-    data['starred_url'] = starredUrl;
-    data['subscriptions_url'] = subscriptionsUrl;
-    data['organizations_url'] = organizationsUrl;
-    data['repos_url'] = reposUrl;
-    data['events_url'] = eventsUrl;
-    data['received_events_url'] = receivedEventsUrl;
-    data['type'] = type;
-    data['site_admin'] = siteAdmin;
-    data['name'] = name;
-    data['public_repos'] = publicRepos;
-    data['public_gists'] = publicGists;
-    data['followers'] = followers;
-    data['following'] = following;
-    data['created_at'] = createdAt;
-    data['updated_at'] = updatedAt;
-    return data;
-  }
 }
+*/
