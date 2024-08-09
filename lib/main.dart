@@ -4,6 +4,12 @@ import 'package:beginnerapp/persondata/person_data.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+// GitHubService class'ını oluşturulım
+// Service class'ları direk domain modellerini dönsün
+// Localization
+// Custom Widter'ları daha güzelleştirebilrsin 
+// DI araştırılacak
+
 void main() {
   runApp(const MyApp());
 }
@@ -32,11 +38,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => MyHomePageState();
 }
 
-class MyHomePageState extends State<MyHomePage> {
-  final url = Uri.parse("https://api.github.com/users/AhmeetKaar/followers");
-  var isLoading = false;
-  late List<dynamic> myListFollow;
-
+class AService {
   Future<http.Response?> apiCall() async {
     setState(() {
       isLoading = true;
@@ -56,11 +58,21 @@ class MyHomePageState extends State<MyHomePage> {
       throw Exception("ERROR: Return => ${res.statusCode}.");
     }
   }
+}
+
+class MyHomePageState extends State<MyHomePage> {
+  final url = Uri.parse("https://api.github.com/users/AhmeetKaar/followers");
+
+  var isLoading = false;
+  var errorMessage = "";
+  late List<dynamic> myListFollow;
+
+  final AService aService = AService();
 
   @override
   void initState() {
     super.initState();
-    apiCall();
+    aService.apiCall();
   }
 
   @override

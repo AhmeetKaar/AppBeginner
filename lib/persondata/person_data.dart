@@ -1,3 +1,4 @@
+import 'package:beginnerapp/my_app_bar.dart';
 import 'package:beginnerapp/supportTools/support_tools.dart';
 import 'package:flutter/material.dart';
 import 'package:beginnerapp/main.dart';
@@ -14,7 +15,7 @@ class _DataPersonState extends State<DataPerson> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AllAppBar.allAppBar,
+      appBar: MyAppBar(),
       body: ListView.builder(
               itemCount: dataService.length,
               itemBuilder: (context, index) {
