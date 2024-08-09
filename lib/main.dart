@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:beginnerapp/supportTools/support_tools.dart';
+import 'package:beginnerapp/persondata/person_data.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -28,10 +29,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   final url = Uri.parse("https://api.github.com/users/AhmeetKaar/followers");
   var isLoading = false;
   late List<dynamic> myListFollow;
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         throw Exception("ERROR: Return => ${res.statusCode}.");
       }
     } catch (e) {
-      throw("try catch hata dönüyor.");
+      throw Exception("ERROR: Return => ${res.statusCode}.");
     }
   }
 
@@ -66,23 +67,33 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AllAppBar.allAppBar,
-      body: isLoading ? const Center(
-        child: CircularProgressIndicator(),) :
-        ListView.builder(itemCount: myListFollow.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            contentPadding: const EdgeInsets.all(8.0),
-            title: Text(myListFollow[index]['login'],),
-            trailing: Image.network(myListFollow[index]['avatar_url'],
-            fit: BoxFit.cover,
-            height: 60.0,
-            width: 60.0,
+      body: isLoading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: myListFollow.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (BuildContext context) => const DataPerson()));
+                  },
+                  child: ListTile(
+                    contentPadding: const EdgeInsets.all(8.0),
+                    title: Text(
+                      myListFollow[index]['login'],
+                    ),
+                    trailing: Image.network(
+                      myListFollow[index]['avatar_url'],
+                      fit: BoxFit.cover,
+                      height: 60.0,
+                      width: 60.0,
+                    ),
+                  ),
+                );
+              },
             ),
-            onTap: () {
-            },
-            );
-        },
-        ),
     );
   }
 }
