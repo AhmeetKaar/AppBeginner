@@ -23,9 +23,9 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AllAppBar(),  
+      appBar: AllAppBar(),
       body: FutureBuilder<List<FollowersModel>?>(
-        future: dataService.apiCall(), 
+        future: dataService.apiCall(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -39,9 +39,10 @@ class HomePageState extends State<HomePage> {
                 final follower = followers![index];
                 return GestureDetector(
                   onTap: () {
-                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => DataPerson(login: follower.login ?? ''),));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          DataPerson(login: follower.login ?? ''),
+                    ));
                   },
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(8.0),

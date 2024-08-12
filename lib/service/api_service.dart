@@ -3,7 +3,7 @@ import 'package:beginnerapp/model/followers_model.dart';
 import 'package:beginnerapp/model/user_model.dart';
 import 'package:http/http.dart' as http;
 
-class ApiService{
+class ApiService {
   final String fixUrl = 'https://api.github.com';
 
   Future<UserModel> apiInfortmation(String login) async {
@@ -11,10 +11,10 @@ class ApiService{
     if (res.statusCode == 200) {
       final Map<String, dynamic> data = json.decode(res.body);
       return UserModel.fromJson(data);
-      } else {
-        throw Exception("ERROR: Return => ${res.statusCode}.");
-        }
+    } else {
+      throw Exception("ERROR: Return => ${res.statusCode}.");
     }
+  }
 
   Future<List<FollowersModel>?> apiCall() async {
     final res = await http.get(Uri.parse('$fixUrl/users/AhmeetKaar/following'));
@@ -32,5 +32,4 @@ class ApiService{
       throw Exception("ERROR: Return => ${res.statusCode}.");
     }
   }
-
 }

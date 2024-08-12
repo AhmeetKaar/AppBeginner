@@ -3,8 +3,7 @@ import 'package:beginnerapp/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const App());
+  runApp(const App());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,4 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

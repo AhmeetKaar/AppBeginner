@@ -12,11 +12,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Localization',
       debugShowCheckedModeBanner: false,
-
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-
       supportedLocales: AppLocalizations.supportedLocales,
-
       localeResolutionCallback:
           (Locale? locale, Iterable<Locale> supportedLocales) {
         if (locale != null) {
