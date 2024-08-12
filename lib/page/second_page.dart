@@ -1,6 +1,6 @@
-// second_page.dart
+import 'package:beginnerapp/core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:beginnerapp/service/api_service.dart'; 
+import 'package:beginnerapp/service/api_service.dart';
 import 'package:beginnerapp/model/user_model.dart';
 
 class DataPerson extends StatelessWidget {
@@ -31,13 +31,34 @@ class DataPerson extends StatelessWidget {
                     height: 400.0,
                     width: 400.0,
                   ),
-                ListTile(title: Text('Name: ${user.name ?? 'N/A'}')),
-                ListTile(title: Text('Location: ${user.location ?? 'N/A'}')),
-                ListTile(title: Text('Blog: ${user.blog ?? 'N/A'}')),
-                ListTile(title: Text('Bio: ${user.blog ?? "No bio available"}')),
-                ListTile(title: Text('Public Repos: ${user.publicRepos ?? 0}')),
-                ListTile(title: Text('Followers: ${user.followers ?? 0}')),
-                ListTile(title: Text('Following: ${user.following ?? 0}')),
+                ListTile(
+                  title: Text(context.translate.name),
+                  subtitle: Text(user.name ?? 'N/A'),
+                ),
+                ListTile(
+                  title: Text(context.translate.country),
+                  subtitle: Text(user.location ?? 'N/A'),
+                ),
+                ListTile(
+                  title: Text(context.translate.blog),
+                  subtitle: Text(user.blog ?? 'N/A'),
+                ),
+                ListTile(
+                  title: Text(context.translate.bio),
+                  subtitle: Text(user.blog ?? "No bio available"),
+                ),
+                ListTile(
+                  title: Text(context.translate.public_repo),
+                  subtitle: Text(('${user.publicRepos ?? 0}')),
+                ),
+                ListTile(
+                  title: Text(context.translate.followers),
+                  subtitle: Text(('${user.followers ?? 0}')),
+                ),
+                ListTile(
+                  title: Text(context.translate.following),
+                  subtitle: Text('${user.following ?? 0}'),
+                ),
               ],
             );
           } else {

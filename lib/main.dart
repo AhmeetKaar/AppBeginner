@@ -1,8 +1,10 @@
 import 'package:beginnerapp/page/first_page.dart';
+import 'package:beginnerapp/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const App());
 }
 
 class MyApp extends StatelessWidget {

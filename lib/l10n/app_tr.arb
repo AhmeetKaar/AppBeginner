@@ -1,0 +1,14 @@
+{
+  "@@locale" : "tr",
+  "login": "Kullanıcı Adı",
+  "name": "İsim",
+  "country": "Ülke",
+  "blog": "İnternet Sitesi",
+  "bio": "Hakkında",
+  "public_repo": "Herkese Açık Depolar",
+  "followers": "Takipçiler",
+  "following": "Takip Edilen",
+  "english": "İngilizce",
+  "phone_language": "Telefon Dili",
+  "turkish": "Türkçe"
+}
