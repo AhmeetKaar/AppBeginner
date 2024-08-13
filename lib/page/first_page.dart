@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:beginnerapp/page/second_page.dart';
 import 'package:beginnerapp/service/api_service.dart';
 import 'package:beginnerapp/model/followers_model.dart';
+import 'package:get_it/get_it.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -13,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  final dataService = ApiService();
 
   @override
   void initState() {
@@ -22,10 +22,11 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final apiService = GetIt.instance<ApiService>();
     return Scaffold(
       appBar: AllAppBar(),
       body: FutureBuilder<List<FollowersModel>?>(
-        future: dataService.apiCall(),
+        future: apiService.apiCall(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());

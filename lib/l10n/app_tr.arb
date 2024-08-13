@@ -2,7 +2,7 @@
   "@@locale" : "tr",
   "login": "Kullanıcı Adı",
   "name": "İsim",
-  "country": "Ülke",
+  "country": "Konum",
   "blog": "İnternet Sitesi",
   "bio": "Hakkında",
   "public_repo": "Herkese Açık Depolar",
