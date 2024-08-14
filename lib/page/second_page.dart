@@ -16,7 +16,12 @@ class DataPerson extends StatelessWidget {
         future: ApiService().apiInfortmation(login),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+                child: Image.asset(
+              'assets/icon.png',
+              width: 100.0,
+              height: 100.0,
+            ));
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {

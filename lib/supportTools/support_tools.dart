@@ -7,9 +7,9 @@ class AllAppBar extends AppBar {
               'Following Information',
               style: TextStyle(
                   letterSpacing: 2,
-                  color: Color.fromARGB(255, 238, 233, 233),
+                  color: Color.fromARGB(255, 255, 255, 255),
                   fontSize: 30,
-                  fontStyle: FontStyle.italic),
+                  ),
             ),
-            backgroundColor: const Color.fromARGB(179, 6, 14, 239));
+            backgroundColor: Colors.blueAccent);
 }

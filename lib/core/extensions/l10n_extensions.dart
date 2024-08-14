@@ -5,4 +5,6 @@ extension AppLocalizationExtension on BuildContext {
   AppLocalizations get translate => AppLocalizations.of(this)!;
 
   String get localeName => translate.localeName;
+
+  static of(context) {}
 }

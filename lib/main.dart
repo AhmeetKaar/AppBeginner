@@ -4,6 +4,7 @@ import 'package:beginnerapp/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  
   setup();
   runApp(const App());
 }

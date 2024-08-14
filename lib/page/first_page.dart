@@ -1,3 +1,4 @@
+import 'package:beginnerapp/core/extensions/l10n_extensions.dart';
 import 'package:beginnerapp/supportTools/support_tools.dart';
 import 'package:flutter/material.dart';
 import 'package:beginnerapp/page/second_page.dart';
@@ -14,7 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-
   @override
   void initState() {
     super.initState();
@@ -23,13 +23,20 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final apiService = GetIt.instance<ApiService>();
+    AppLocalizationExtension.of(context);
+
     return Scaffold(
       appBar: AllAppBar(),
       body: FutureBuilder<List<FollowersModel>?>(
         future: apiService.apiCall(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+                child: Image.asset(
+              'assets/icon.png',
+              width: 100.0,
+              height: 100.0,
+            ));
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {
