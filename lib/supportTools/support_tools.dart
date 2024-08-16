@@ -4,7 +4,7 @@ class AllAppBar extends AppBar {
   AllAppBar({super.key})
       : super(
             title: const Text(
-              'Following Information',
+              'Github Data',
               style: TextStyle(
                   letterSpacing: 2,
                   color: Color.fromARGB(255, 255, 255, 255),
