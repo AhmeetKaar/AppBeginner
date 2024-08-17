@@ -28,18 +28,8 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AllAppBar(),
       body: FutureBuilder<List<FollowersModel>?>(
-        future: apiService.apiCall(),
+        future: apiService.apiFollowing(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
-                child: Image.asset(
-              'assets/icon.png',
-              width: 100.0,
-              height: 100.0,
-            ));
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (snapshot.hasData) {
             final List<FollowersModel>? followers = snapshot.data;
             return ListView.builder(
               itemCount: followers?.length ?? 0,
@@ -65,10 +55,7 @@ class HomePageState extends State<HomePage> {
                 );
               },
             );
-          } else {
-            return const Center(child: Text('No data found'));
           }
-        },
       ),
     );
   }

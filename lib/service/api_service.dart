@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class ApiService {
   final String fixUrl = 'https://api.github.com';
 
-  Future<UserModel> apiInfortmation(String login) async {
+  Future<UserModel> apiUser(String login) async {
     final res = await http.get(Uri.parse('$fixUrl/users/$login'));
     if (res.statusCode == 200) {
       final Map<String, dynamic> data = json.decode(res.body);
@@ -16,7 +16,7 @@ class ApiService {
     }
   }
 
-  Future<List<FollowersModel>?> apiCall() async {
+  Future<List<FollowersModel>?> apiFollowing() async {
     final res = await http.get(Uri.parse('$fixUrl/users/AhmeetKaar/following'));
     try {
       if (res.statusCode == 200) {

@@ -17,18 +17,18 @@ dependencies:
   http: ^1.2.2
   get_it: ^7.7.0
   injectable: ^2.4.4
-  flutter_launcher_icons: ^0.13.1
 
 flutter_icons: 
   android:  true 
   ios:  true 
-  image_path: assets/icon.png
+  image_path: assets/logo.png
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_native_splash: ^2.4.1
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.1 
   flutter_lints: ^3.0.0
   injectable_generator: ^2.6.2
   build_runner: ^2.4.11
@@ -38,3 +38,9 @@ flutter:
   generate: true
   assets:
     - assets/
+
+flutter_native_splash:
+  image: assets/logo.png
+  color: 42a5f5
+  android: true
+  ios: true

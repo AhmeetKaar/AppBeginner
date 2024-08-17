@@ -13,12 +13,12 @@ class DataPerson extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(login)),
       body: FutureBuilder<UserModel>(
-        future: ApiService().apiInfortmation(login),
+        future: ApiService().apiUser(login),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
                 child: Image.asset(
-              'assets/icon.png',
+              'assets/logo.png',
               width: 100.0,
               height: 100.0,
             ));
