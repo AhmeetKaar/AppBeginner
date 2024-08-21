@@ -1,6 +1,6 @@
 import 'dart:developer' show log;
 
-import 'package:beginnerapp/page/first_page.dart';
+import 'package:beginnerapp/screen/launch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -17,7 +17,7 @@ class App extends StatelessWidget {
       localeResolutionCallback:
           (Locale? locale, Iterable<Locale> supportedLocales) {
         if (locale != null) {
-          log("Algılanan cihaz dili: Dil Kodu: ${locale.languageCode}, Ülke Kodu: ${locale.countryCode}");
+          log("Detected device language: Language code: ${locale.languageCode}, Country code: ${locale.countryCode}");
 
           for (var supportedLocale in supportedLocales) {
             if (supportedLocale.languageCode == locale.languageCode &&
@@ -26,9 +26,9 @@ class App extends StatelessWidget {
             }
           }
         }
-        log("Algılanan cihaz dili desteklenen diller arasında bulunmuyor.");
+        log("The detected device language is not among the supported languages.");
 
-        log("Uygulamanın başlatılması istenen dil: Dil Kodu: ${supportedLocales.first.languageCode}, Ülke Kodu: ${supportedLocales.first.countryCode}");
+        log("Language in which to launch the application: Launguage code: ${supportedLocales.first.languageCode}, Contry code: ${supportedLocales.first.countryCode}");
         return supportedLocales.first;
       },
       home: const HomePage(title: 'API'),

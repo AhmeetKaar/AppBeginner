@@ -1,7 +1,7 @@
 import 'package:beginnerapp/core/extensions/l10n_extensions.dart';
-import 'package:beginnerapp/supportTools/support_tools.dart';
+import 'package:beginnerapp/customWidget/support_tools.dart';
 import 'package:flutter/material.dart';
-import 'package:beginnerapp/page/second_page.dart';
+import 'package:beginnerapp/screen/user_data_screen.dart';
 import 'package:beginnerapp/service/api_service.dart';
 import 'package:beginnerapp/model/followers_model.dart';
 import 'package:get_it/get_it.dart';
