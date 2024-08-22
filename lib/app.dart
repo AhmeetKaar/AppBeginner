@@ -1,11 +1,13 @@
 import 'dart:developer' show log;
 
+import 'package:beginnerapp/model/followers_model.dart';
 import 'package:beginnerapp/screen/launch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  const App({super.key,required this.loadingData,});
+  final List<FollowersModel>? loadingData;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class App extends StatelessWidget {
         log("Language in which to launch the application: Launguage code: ${supportedLocales.first.languageCode}, Contry code: ${supportedLocales.first.countryCode}");
         return supportedLocales.first;
       },
-      home: const HomePage(title: 'API'),
+      home: HomePage(title: 'API', followersData:loadingData),
     );
   }
 }

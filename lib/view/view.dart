@@ -1,1 +1,0 @@
-export 'package:beginnerapp/main.dart';

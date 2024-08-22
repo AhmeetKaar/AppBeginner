@@ -1,3 +1,4 @@
+import 'package:beginnerapp/DI/di_create.dart';
 import 'package:beginnerapp/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:beginnerapp/service/api_service.dart';
@@ -5,15 +6,16 @@ import 'package:beginnerapp/model/user_model.dart';
 
 class DataPerson extends StatelessWidget {
   final String login;
+  final ApiService apiService = getIt.get<ApiService>();
 
-  const DataPerson({super.key, required this.login});
+  DataPerson({super.key, required this.login});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(login)),
       body: FutureBuilder<UserModel>(
-        future: ApiService().apiUser(login),
+        future: apiService.apiUser(login),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
