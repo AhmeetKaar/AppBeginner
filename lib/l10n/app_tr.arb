@@ -1,0 +1,15 @@
+{
+  "@@locale" : "tr",
+  "login": "Kullanıcı Adı",
+  "name": "İsim",
+  "country": "Konum",
+  "blog": "İnternet Sitesi",
+  "bio": "Hakkında",
+  "public_repo": "Herkese Açık Depolar",
+  "followers": "Takipçiler",
+  "following": "Takip Edilen",
+  "english": "İngilizce",
+  "github_data": "Github Verileri",
+  "phone_language": "Telefon Dili",
+  "turkish": "Türkçe"
+}
